@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { fetchDailyData } from '../../api';
-import { Chart as ChartJS } from 'chart.js/auto';
 import { Line, Bar } from 'react-chartjs-2';
 import styles from './Chart.module.css';
+import { Chart as ChartJS, registerables } from 'chart.js';
+ChartJS.register(...registerables);
+
 
 
 /*
@@ -11,6 +13,7 @@ import styles from './Chart.module.css';
 
 const Chart = ({ data : { confirmed, recovered, deaths }, country }) => {
 
+   
     const [dailyData, setDailyData] = useState([]);
 
     useEffect(() => {
@@ -47,6 +50,8 @@ const Chart = ({ data : { confirmed, recovered, deaths }, country }) => {
     );
 
     const barChart = (
+
+
         confirmed ? 
         <Bar 
            data= {{

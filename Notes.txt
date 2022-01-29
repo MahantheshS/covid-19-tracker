@@ -1,0 +1,33 @@
+npx create-react-app ./ --> command to create react application
+
+Dependencies::
+npm install --save 
+ axios
+ chart.js
+ react-chartjs-2
+ react-count-up
+ classnames
+ material-ui/core
+
+ App -> Class component
+ Rest -> Functional components
+
+ componentdidMount () => method which triggers when an instance of a component
+ is created and renders in DOM
+
+ Orders in which they invoke:
+
+ 1) constructor(props) 
+   a) Intialize state
+   b) Binding Event Handlers
+   c) Directly overwrite this.state other places this.setState
+ 2) static getDerivedStateFromProps(props,state) => return object representing new state
+ 3) render()
+ 4) componentdidMount() => only once in lifecycle of a given component
+ will be called once the component and all its children renders to the DOM
+
+ npm run build --> to build
+
+ Todo:
+
+ Dynamic maps for Cards Grid component
